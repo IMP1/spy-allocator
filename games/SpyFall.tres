@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://def/GameDef.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+name = "SpyFall"
+knowledge_format = "You are in/at a {secret}"
+possible_information = [ "Ocean Liner", "Beach", "Aeroplane", "Military Base", "Day Spa", "Cathedral", "Circus Tent" ]

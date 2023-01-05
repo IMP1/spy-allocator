@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/uncertainty.png" type="Texture" id=1]
+[ext_resource path="res://assets/AtkinsonHyperlegible-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/PlayerAssignment.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="PlayerAssignment" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="PlayerNumber" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -92.5
+margin_top = 32.0
+margin_right = 92.5
+margin_bottom = 62.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 4 )
+text = "You are Player #1"
+align = 1
+
+[node name="RolePanel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -64.0
+margin_right = 64.0
+margin_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="RolePanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+
+[node name="Role" type="Label" parent="RolePanel"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "You are the spy!"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="SealBroken" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_top = 160.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 4 )
+text = "Role has been seen"
+align = 1
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -98.5
+margin_top = 96.0
+margin_right = 98.5
+margin_bottom = 132.0
+grow_horizontal = 2
+custom_fonts/font = SubResource( 4 )
+text = "Hold to show role"
+
+[connection signal="button_down" from="Button" to="." method="reveal"]
+[connection signal="button_up" from="Button" to="." method="hide"]
