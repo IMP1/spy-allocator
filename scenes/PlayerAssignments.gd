@@ -12,7 +12,7 @@ onready var _assignments: TabContainer = $TabContainer as TabContainer
 onready var _wipe: ScreenWipe = $Wipe as ScreenWipe
 
 func _ready():
-	randomize()
+	_rng.randomize()
 	var n := _rng.randi_range(0, game.possible_information.size() - 1)
 	var secret: String = game.possible_information[n]
 	for i in player_count:
