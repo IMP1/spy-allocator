@@ -1,8 +1,10 @@
 # Spy Allocator
 
-![Spy Logo](https://raw.githubusercontent.com/IMP1/spy-allocator/master/assets/spy.png)
-
-
+<picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/IMP1/spy-allocator/master/assets/spy.png">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/IMP1/spy-allocator/master/assets/spy.png"> <!-- TODO: Have a light theme version -->
+    <img alt="Shows an stylised icon of a spy." src="https://raw.githubusercontent.com/IMP1/spy-allocator/master/assets/spy.png">
+</picture>
 
 ## Credits
 
