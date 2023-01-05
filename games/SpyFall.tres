@@ -6,4 +6,4 @@
 script = ExtResource( 1 )
 name = "SpyFall"
 knowledge_format = "You are in/at a {secret}"
-possible_information = [ "Ocean Liner", "Beach", "Aeroplane", "Military Base", "Day Spa", "Cathedral", "Circus Tent" ]
+possible_information = [ "Aeroplane", "Bank", "Beach", "Casino", "Cathedral", "Circus Tent", "Corporate Party", "Day Spa", "Embassy", "Hospital", "Hotel", "Military Base", "Ocean Liner", "Polar Station", "Space Station" ]
