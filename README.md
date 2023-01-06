@@ -23,10 +23,17 @@ Inspired by [this CLI project](https://github.com/bevanswanson/secret-artist), I
 
 Images are from [Game Icons](https://game-icons.net/) and are available under the [CC BY 3.0](https://creativecommons.org/licenses/by/3.0/) license.
 
+  * Keyhole: *Lock Spy* by [Delapouite](https://delapouite.com/)
+  * Spy: *Spy* by [Delapouite](https://delapouite.com/)
+  * Question Mark: *Uncertainty* by [Lorc](https://lorcblog.blogspot.com/)
+  * Arrows: *Virtual Marker* by [Delapouite](https://delapouite.com/)
+
+
 The font is [Atkinson Hyperlegible](https://github.com/googlefonts/atkinson-hyperlegible) and is published under the [Open Font Licence](https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL) license.
 
 The app was developed with [Godot](https://godotengine.org/en).
 
+The GitHub logo is intended to be used as the permission lays out [here](https://github.com/logos).
 
 ## License
 
