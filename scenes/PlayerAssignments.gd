@@ -17,14 +17,16 @@ func _ready():
 	_rng.randomize()
 	var n := _rng.randi_range(0, game.group_secrets.size() - 1)
 	var group_secret: String = game.group_secrets[n]
-	var individual_secret: String =  ""
+	var individual_secrets: Array = []
 	if game.individual_secrets.has(group_secret):
-		var i := _rng.randi_range(0, game.individual_secrets[group_secret].size() - 1)
-		individual_secret = game.individual_secrets[group_secret][i]
+		for secret in game.individual_secrets[group_secret]:
+			individual_secrets.append(secret)
+	individual_secrets.shuffle()
 	for i in player_count:
 		var assignment_scene = PLAYER_ASSIGNMENT.instance()
 		_assignments.add_child(assignment_scene)
 		assignment_scene.player_number = (i+1)
+		var individual_secret = individual_secrets[i % individual_secrets.size()]
 		var secrets: Dictionary = {"group_secret": group_secret, "ind_secret": individual_secret}
 		assignment_scene.role = game.knowledge_format.format(secrets)
 	var spy_count: int = _rng.randi_range(spy_count_min, spy_count_max)
