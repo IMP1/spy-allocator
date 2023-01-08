@@ -4,6 +4,8 @@ const PLAYER_ASSIGNMENT = preload("res://scenes/PlayerAssignment.tscn")
 const FINISH_SCENE = preload("res://scenes/Finish.tscn")
 
 var player_count: int = 1
+var spy_count_min: int = 1
+var spy_count_max: int = 1
 var game: SpyGame
 
 var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
@@ -13,15 +15,26 @@ onready var _wipe: ScreenWipe = $Wipe as ScreenWipe
 
 func _ready():
 	_rng.randomize()
-	var n := _rng.randi_range(0, game.possible_information.size() - 1)
-	var secret: String = game.possible_information[n]
+	var n := _rng.randi_range(0, game.group_secrets.size() - 1)
+	var group_secret: String = game.group_secrets[n]
+	var individual_secret: String =  ""
+	if game.individual_secrets.has(group_secret):
+		var i := _rng.randi_range(0, game.individual_secrets[group_secret].size() - 1)
+		individual_secret = game.individual_secrets[group_secret][i]
 	for i in player_count:
 		var assignment_scene = PLAYER_ASSIGNMENT.instance()
 		_assignments.add_child(assignment_scene)
 		assignment_scene.player_number = (i+1)
-		assignment_scene.role = game.knowledge_format.format({"secret": secret})
-	var spy := _rng.randi_range(0, player_count - 1)
-	_assignments.get_child(spy).role = "You are the Spy"
+		var secrets: Dictionary = {"group_secret": group_secret, "ind_secret": individual_secret}
+		assignment_scene.role = game.knowledge_format.format(secrets)
+	var spy_count: int = _rng.randi_range(spy_count_min, spy_count_max)
+	var spies = []
+	while spies.size() < spy_count:
+		var spy := _rng.randi_range(0, player_count - 1)
+		if not spy in spies:
+			spies.append(spy)
+	for spy in spies:
+		_assignments.get_child(spy).role = "You are the Spy"
 
 func _next_player() -> void:
 	if _assignments.current_tab == player_count - 1:

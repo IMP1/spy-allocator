@@ -5,5 +5,27 @@
 [resource]
 script = ExtResource( 1 )
 name = "SpyFall"
-knowledge_format = "You are in/at a {secret}"
-possible_information = [ "Aeroplane", "Bank", "Beach", "Casino", "Cathedral", "Circus Tent", "Corporate Party", "Day Spa", "Embassy", "Hospital", "Hotel", "Military Base", "Ocean Liner", "Polar Station", "Space Station" ]
+knowledge_format = "You are a {ind_secret} at a {group_secret}"
+group_secrets = [ "Aeroplane", "Bank", "Beach", "Casino", "Cathedral", "Circus Tent", "Corporate Party", "Day Spa", "Embassy", "Film Studio", "Hospital", "Hotel", "Military Base", "Ocean Liner", "Polar Station", "Police Station", "Space Station", "University" ]
+individual_secrets = {
+"Aeroplane": [ "First Class Passenger", "On-board Security", "Flight Attendant", "Captain", "Co-pilot", "Economy Class Passenger" ],
+"Bank": [ "Manager", "Security Guard", "Clerk", "Customer", "Armoured Car Driver", "Robber" ],
+"Beach": [ "Lifeguard", "Beach Goer", "Photographer", "Ice Cream Van Driver", "Surfer", "Swimmer" ],
+"Casino": [ "Security Guard", "Gambler", "Card Dealer", "Hustler", "Manager", "Drinks Server" ],
+"Cathedral": [ "Priest", "Sinner", "Tourist", "Choir Singer", "Beggar", "Donor" ],
+"Circus Tent": [ "Acrobat", "Clown", "Fire Eater", "Juggler", "Attendee", "Animal Trainer" ],
+"Corporate Party": [ "Entertainer", "Manager", "Secretary", "Accountant", "CEO", "Unexpected Guest" ],
+"Day Spa": [ "Massage Therapist", "Manicurist", "Dermatologist", "Customer", "Stylist", "Make-up Artist" ],
+"Embassy": [ "Secretary", "Security Guard", "Diplomat", "Government Official", "Refugee", "Tourist" ],
+"Film Studio": [ "Camera Operator", "Director", "Actor", "Costume Artist", "Sound Engineer", "Stunt Performer" ],
+"Hospital": [ "Nurse", "Doctor", "Anaesthetist", "Patient", "Surgeon", "Medical Student" ],
+"Hotel": [ "Concierge", "Manager", "Caretaker", "Porter", "Customer", "Security Guard" ],
+"Military Base": [ "General", "Tank Engineer", "Sniper", "Medic", "Soldier", "Deserter" ],
+"Ocean Liner": [ "Cook", "Captain", "Bartender", "Musician", "Waiter", "Wealthy Passenger" ],
+"Polar Station": [ "Field Doctor", "Geologist", "Hydrologist", "Meteorologist", "Expedition Leader", "Radio Operator" ],
+"Police Station": [ "Detective", "Lawyer", "Journalist", "Archivist", "Police Officer", "Criminal" ],
+"Space Satation": [ "Engineer", "Pilot", "Doctor", "Commander", "Scientist", "Space Tourist" ],
+"University": [ "Professor", "Student", "Cleaner", "Graduate Student", "Dean", "Psychologist" ]
+}
+link = "https://www.spyfall.app/"
+description = "Spyfall is a 2014 card game for 3–8 players designed by Alexandr Ushan and published by Hobby World."

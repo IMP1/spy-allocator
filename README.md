@@ -13,10 +13,12 @@ Inspired by [this CLI project](https://github.com/bevanswanson/secret-artist), I
 ## Still To Do
 
   - [X] I need to populate the games with more places/nouns
-  - [ ] I want to add the option for multiple spies
+  - [X] I want to add the option for multiple spies
   - [ ] I would like to add any similar games - if you know of any, please point me in their direction!
   - [ ] When Godot 3.6 releases, to use a numeric keyboard on the phone for the number of players. See [here](https://github.com/godotengine/godot-proposals/issues/1511) for the relevant Godot issue.
   - [X] It really seems to me that the random-ness of it is not very random. If you wanna check this, then if I have 4 players, the 3rd is always the spy. If I have 3 players, the 1st is always the spy.
+  - [X] Individual secrets (like roles within SpyFall)
+  - [X] A page for info about the game (a link) and a list of possible secrets.
 
 
 ## Credits
