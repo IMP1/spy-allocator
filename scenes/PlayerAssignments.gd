@@ -28,7 +28,7 @@ func _ready():
 		assignment_scene.player_number = (i+1)
 		var individual_secret = ""
 		if individual_secrets.size() > 0:
-			individual_secrets[i % individual_secrets.size()]
+			individual_secret = individual_secrets[i % individual_secrets.size()]
 		var secrets: Dictionary = {"group_secret": group_secret, "ind_secret": individual_secret}
 		assignment_scene.role = game.knowledge_format.format(secrets)
 	var spy_count: int = _rng.randi_range(spy_count_min, spy_count_max)
