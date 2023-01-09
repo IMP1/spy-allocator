@@ -56,3 +56,13 @@ func _wipe_midpoint() -> void:
 
 func _wipe_finish() -> void:
 	_wipe.visible = false
+
+func _back() -> void:
+	# TODO: Some other transition
+	var transition: int = Scene.Transition.FLY + Scene.Transition.RIGHT + Scene.Transition.FADE
+	var scene: Scene = load("res://scenes/Setup.tscn").instance()
+	_main_scene.change_scene(scene, transition, transition)
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_back()

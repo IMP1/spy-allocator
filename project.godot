@@ -34,6 +34,7 @@ _global_script_class_icons={
 
 config/name="Spy Game Chooser"
 run/main_scene="res://scenes/Main.tscn"
+config/quit_on_go_back=false
 
 [display]
 

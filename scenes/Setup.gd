@@ -53,3 +53,7 @@ func _show_game_info() -> void:
 	var scene: Scene = GAME_INFO.instance()
 	scene.games = _possible_games
 	_main_scene.change_scene(scene, transition, transition)
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		get_tree().quit(0)

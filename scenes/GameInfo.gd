@@ -19,3 +19,7 @@ func _back() -> void:
 	var transition: int = Scene.Transition.FLY + Scene.Transition.UP + Scene.Transition.FADE
 	var scene: Scene = SETUP.instance()
 	_main_scene.change_scene(scene, transition, transition)
+
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+		_back()
